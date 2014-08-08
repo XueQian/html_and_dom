@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>homework</title>
+    <meta http-equiv="Content-Type" content="html-5,javascript; charset=utf-8"/>
+
+</head>
+  <body>
+        <p>西安软件服务外包学院 </p>
+        <hr />
+        <table style="width:1346px" border="1px" cellpadding="20" >
+          <tr>d    
+            <td bgcolor="red"  align="center" >
+              <strong><font size=28>统一建模语言理论测试</strong>
+            </td>
+          </tr>
+        </table>
+        <table style="width:1346px">
+          <tr>
+            <td>
+              <p>考试科目：<u><strong>&nbsp;统一建模语言UML&nbsp;<strong></u></p>
+            </td>
+            <td>
+              <p>时间：<u><strong>&nbsp;&nbsp;&nbsp;100&nbsp;分钟&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong></u></p>
+            </td>
+            <td>
+              <form action="">
+                得分: <input type="text" style="BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: solid" name="firstname">
+              </form>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <form action="">
+              &nbsp;&nbsp;&nbsp;&nbsp;班级: <input type="text" style="BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: solid" name="firstname">
+              </form>
+            </td>
+            <td>
+              <form action="">
+                学号: <input type="text" style="BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: solid" name="firstname">
+              </form>
+            </td>
+            <td>
+              <form action="">
+                姓名: <input type="text" style="BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: solid" name="firstname">
+              </form>
+            </td>
+          </tr>
+        </table>
+
+
+      <h2><strong>一，&nbsp;&nbsp;填空题</strong></h2>
+        <ol>
+          <li>
+            <form action="">
+              UML的中文: <input type="text" style="BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: solid" name="firstname">。
+            </form>
+          </li>
+          <li>
+            <form action="">
+              对象最突出的特征是: <input type="text" style="BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: solid" name="firstname">,
+              <input type="text" style="BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: solid" name="firstname">,
+              <input type="text" style="BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: solid" name="firstname">。
+            </form>
+          </li>
+        </ol>
+
+      <h2><strong>二，&nbsp;&nbsp;选择题</strong></h2>
+        <ol>
+          <li>
+            UML与软件工程的关系是：
+            <form action="">
+              <input type="radio" name="radio1" value="A">（A）UML就是软件工程<br>
+              <input type="radio" name="radio1" value="B">（B）UML参与到软件工程中软件开发过程的几个阶段<br>
+              <input type="radio" name="radio1" value="C">（C）UML与软件工程无关<br>
+              <input type="radio" name="radio1" value="D">（D）UML是软件工程的一部分
+            </form>
+          </li>
+
+          <li>
+            Java语言支持：
+            <form action="">
+              <input type="radio" name="radio2" value="A">（A）单继承<br>
+              <input type="radio" name="radio2" value="B">（B）多继承<br>
+              <input type="radio" name="radio2" value="C">（C）单继承和多继承都支持<br>
+              <input type="radio" name="radio2" value="D">（D）单继承和多继承都不支持
+            </form>
+          </li>
+        </ol>
+
+      <h2><strong>三，&nbsp;&nbsp;多选题</strong></h2>
+        <ol>
+          <li>
+             用例的粒度分为以下哪三种。
+            <form action="">
+              <input type="checkbox" name="checkbox1" value="A">（A）概述级<br>
+              <input type="checkbox" name="checkbox1" value="B">（B）需求级<br>
+              <input type="checkbox" name="checkbox1" value="C">（C）用户目标级<br>
+              <input type="checkbox" name="checkbox1" value="D">（D）子功能级
+            </form>
+          </li>
+          <li>
+             类图由以下哪三部分组成。
+            <form action="">
+              <input type="checkbox" name="checkbox2" value="A">（A）名称(Name)<br>
+              <input type="checkbox" name="checkbox2" value="B">（B）属性(Attribute)<br>
+              <input type="checkbox" name="checkbox2" value="C">（C）操作(Operation)<br>
+              <input type="checkbox" name="checkbox2" value="D">（D）方法（Function）
+            </form>
+          </li>
+        </ol>
+
+      <h2><strong>四，&nbsp;&nbsp;判断题</strong></h2>
+        <ol>
+          <li>
+            <form action="">
+              <select name="judge1">
+                1． 用例图只是用于和客户交流和沟通的，用于确定需求。
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="fiat">Fiat</option>
+                <option value="audi">Audi</option>
+              </select>
+            </form>
+          </li>
+          <li>Bananas</li>
+          <li>Lemons</li>
+          <li>Oranges</li>
+        </ol>
+
+    <h2>Lowercase Roman numbers list:</h2>
+      <ol type="i">
+        <li>Apples</li>
+        <li>Bananas</li>
+        <li>Lemons</li>
+        <li>Oranges</li>
+      </ol>
+
+
+
+  </body>
+
+</html>

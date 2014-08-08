@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>homework</title>
+    <meta charset="UTF-8" lang="zh-cn">
+    <script type="text/javascript" src="calculate.js"></script>
+</head>
+  <body>
+    <form name="full" method="post">
+        <p>西安软件服务外包学院</p>
+        <hr />
+        <table style="width:1346px" border="1px" cellpadding="20" >
+          <tr>
+            <td bgcolor="red"  align="center" >
+              <strong><font size=28>统一建模语言理论测试</strong>
+            </td>
+          </tr>
+        </table>
+        <table style="width:1346px">
+          <tr>
+            <td>
+              <p>考试科目：<u><strong>&nbsp;统一建模语言UML&nbsp;<strong></u></p>
+            </td>
+            <td>
+              <p>时间：<u><strong>&nbsp;&nbsp;&nbsp;100&nbsp;分钟&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong></u></p>
+            </td>
+            <td>
+                得分: <input type="text"  id="score" name="score" readonly>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              &nbsp;&nbsp;&nbsp;&nbsp;班级: <input id="classes" type="text" required placeholder="请输入班级"  name="classes">
+            </td>
+            <td>
+                学号: <input  id="studentNumber" type="text" required placeholder="请输入学号"  name="studentNumber">
+            </td>
+            <td>
+                姓名: <input id="name" type="text" placeholder="请输入姓名"  required  name="name">
+            </td>
+          </tr>
+        </table>
+
+
+      <h2><strong>一，&nbsp;&nbsp;填空题</strong></h2>
+        <ol>
+          <li>
+              UML的中文: <input name="gapFilling1" type="text">。
+          </li>
+          <li>
+              对象最突出的特征是: <input name="gapFilling2" type="text" >,
+                              <input name="gapFilling2" type="text" >,
+                              <input name="gapFilling2" type="text" >
+          </li>
+        </ol>
+      <h2><strong>二，&nbsp;&nbsp;选择题</strong></h2>
+        <ol>
+          <li>
+            <div>UML与软件工程的关系是：</div><br>
+              <input name="select1" type="radio"  value="A">（A）UML就是软件工程<br>
+              <input name="select1" type="radio"  value="B">（B）UML参与到软件工程中软件开发过程的几个阶段<br>
+              <input name="select1" type="radio"  value="C">（C）UML与软件工程无关<br>
+              <input name="select1" type="radio"  value="D">（D）UML是软件工程的一部分
+          </li>
+          <li>
+             <div>Java语言支持：</div><br>
+              <input name="select2" type="radio"  value="A">（A）单继承<br>
+              <input name="select2" type="radio"  value="B">（B）多继承<br>
+              <input name="select2" type="radio"  value="C">（C）单继承和多继承都支持<br>
+              <input name="select2" type="radio"  value="D">（D）单继承和多继承都不支持
+          </li>
+        </ol>
+      <h2><strong>三，&nbsp;&nbsp;多选题</strong></h2>
+        <ol>
+          <li>
+             <div>用例的粒度分为以下哪三种。</div><br>
+              <input name="multiSelect1" type="checkbox"  value="A">（A）概述级<br>
+              <input name="multiSelect1" type="checkbox" value="B">（B）需求级<br>
+              <input name="multiSelect1" type="checkbox"  value="C">（C）用户目标级<br>
+              <input name="multiSelect1" type="checkbox" value="D">（D）子功能级
+          </li>
+          <li>
+             <div>类图由以下哪三部分组成。.</div><br>
+              <input name="multiSelect2" type="checkbox" value="A">（A）名称(Name)<br>
+              <input name="multiSelect2" type="checkbox" value="B">（B）属性(Attribute)<br>
+              <input name="multiSelect2" type="checkbox" value="C">（C）操作(Operation)<br>
+              <input name="multiSelect2" type="checkbox" value="D">（D）方法（Function）
+          </li>
+        </ol>
+      <h2><strong>四，&nbsp;&nbsp;判断题</strong></h2>
+                 1. 用例图只是用于和客户交流和沟通的,用于确定需求。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <input name="judge1" type="radio"  value="V">V
+                  <input name="judge1" type="radio"  value="X">X<br>
+                 2. 在状态图中,终止状态在一个状态图中允许有任意多个。&nbsp;&nbsp;
+                  <input name="judge2" type="radio" value="V">V
+                  <input name="judge2" type="radio" value="X">X
+
+    <h2>五，&nbsp;&nbsp;简答题</h2>
+      <textarea name="answer" rows="10" cols="150"></textarea>
+      <button type="submit" form="full" onclick="return Calculate();">提交</button>
+      <!-- <button type="reset" form="full">取消</button> -->
+
+    </form>
+
+  </body>
+</html>
