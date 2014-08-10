@@ -4,7 +4,14 @@
     <meta charset="UTF-8" >
     <title>homework</title>
 
-    <script type="text/javascript" src="calculate.js"></script>
+    <script type="text/javascript" src="js/basicInfo_checker.js"></script>
+    <script type="text/javascript" src="js/gapFilling_questions.js"></script>
+    <script type="text/javascript" src="js/judge_questions.js"></script>
+    <script type="text/javascript" src="js/multiSelect_questions.js"></script>
+    <script type="text/javascript" src="js/questions_checker.js"></script>
+    <script type="text/javascript" src="js/questions.js"></script>
+    <script type="text/javascript" src="js/select_questions.js"></script>
+    <script type="text/javascript" src="js/simpleAnswer_questions.js"></script>
 
 </head>
 <body>
@@ -161,12 +168,12 @@
         </header>
         <label>
             <div>简述什么是模型以及模型的表现形式？</div><br>
-            <textarea name="answer" rows="10" cols="150"></textarea>
+            <textarea name="simpleAnswer" rows="10" cols="150"></textarea>
         </label>
     </session>
 
     <footer>
-        <button type="submit" form="full" onclick="return Calculate();">提交</button>
+        <button type="submit" form="full" onclick="return basicInfoChecker();">提交</button>
     </footer>
 </form>
 </body>
