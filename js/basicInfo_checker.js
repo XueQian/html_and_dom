@@ -3,11 +3,13 @@ function basicInfoChecker() {
   var studentNumber = document.getElementById("studentNumber");
   var name = document.getElementById("name");
   var scores = document.getElementById("score");
+  var score_div = document.getElementById("scorediv");
+
 
   var score = 0;
   score = calculateTotalScore();
-
-  scores.value = score + '分';
+  score_div.style.color='red';
+  score.value = score + '分';
 
   if(basicInfo(classes, studentNumber, name)){
 
@@ -18,23 +20,48 @@ function basicInfoChecker() {
 }
 
 function basicInfo(classes, studentNumber, name) {
-  if (name.value === '') {
-    alert('姓名栏不能空！');
 
+  if(classes.value === '') {
+    document.getElementById("classesdiv").className = "has-error";
+    if(studentNumber.value === ''){
+      document.getElementById("studentNumberdiv").className = "has-error";
+    }else{
+      document.getElementById("studentNumberdiv").className = "has-success";
+    }
+    if(name.value === ''){
+      document.getElementById("namediv").className = "has-error";
+    }else{
+      document.getElementById("namediv").className = "has-success";
+    }
+    alert('班级,学号，姓名不能为空！');
     return true;
+  }else{
+    document.getElementById("classesdiv").className = "has-success";
   }
-  if (studentNumber.value === '') {
-    alert('学号栏不能空！');
 
+  if(studentNumber.value === '') {
+    document.getElementById("studentNumberdiv").className = "has-error";
+    if(name.value === ''){
+      document.getElementById("namediv").className = "has-error";
+    }else{
+      document.getElementById("namediv").className = "has-success";
+    }
+    alert('学号，姓名不能为空！');
     return true;
+  }else{
+    document.getElementById("studentNumberdiv").className = "has-success";
   }
-  if (classes.value === '') {
-    alert('班级栏不能空！');
 
+  if(name.value === '') {
+    document.getElementById("namediv").className = "has-error";
+    alert('姓名不能为空！');
     return true;
+  }else{
+    document.getElementById("namediv").className = "has-success";
   }
 
   return false;
+
 }
 
 function calculateTotalScore() {
