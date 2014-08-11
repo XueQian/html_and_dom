@@ -9,8 +9,15 @@ JudgeQuestions.prototype.calculateScore = function() {
 
   var judge = document.getElementsByName(this.questionName);
 
-  if(judge[0].value === this.answer){
-    console.log(this.scoreUnit+".............JudgeQuestions");
+  var myanswer = '';
+  for(var i = 0; i < 2;i++){
+    if(judge[i].checked){
+      myanswer += judge[i].value;
+    }
+  }
+
+  if(myanswer === this.answer){
+  
     return this.scoreUnit;
   }
   return 0;

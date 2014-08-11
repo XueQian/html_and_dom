@@ -9,8 +9,15 @@ SelectQuestions.prototype.calculateScore = function() {
 
   var select = document.getElementsByName(this.questionName);
 
-  if(select[0].value === this.answer){
-    console.log(this.scoreUnit+".............SelectQuestions");
+  var myanswer = '';
+  for(var i = 0; i < 4;i++){
+    if(select[i].checked){
+      myanswer += select[i].value;
+    }
+  }
+
+  if(myanswer === this.answer){
+
     return this.scoreUnit;
   }
 
