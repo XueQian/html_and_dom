@@ -1,15 +1,16 @@
-function simpleAnswerQuestions(questionName,answer,scoreUnit) {
+function SimpleAnswerQuestions(questionName,answer,scoreUnit) {
   Question.call(this,questionName,answer,scoreUnit);
 }
 
-simpleAnswerQuestions.prototype = Object.create(Question.prototype);
-simpleAnswerQuestions.prototype.constructor = simpleAnswerQuestions;
+SimpleAnswerQuestions.prototype = Object.create(Question.prototype);
+SimpleAnswerQuestions.prototype.constructor = SimpleAnswerQuestions;
 
-simpleAnswerQuestions.prototype.calculate = function(){
+SimpleAnswerQuestions.prototype.calculate = function(){
 
   var simpleAnswer = document.getElementsByName(this.questionName);
 
   if(simpleAnswer[0].value === this.answer){
+    console.log(this.scoreUnit+".............SimpleAnswerQuestions");
     return this.scoreUnit;
   }
 

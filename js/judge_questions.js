@@ -10,8 +10,8 @@ JudgeQuestions.prototype.calculateScore = function() {
   var judge = document.getElementsByName(this.questionName);
 
   if(judge[0].value === this.answer){
+    console.log(this.scoreUnit+".............JudgeQuestions");
     return this.scoreUnit;
   }
-
   return 0;
 }

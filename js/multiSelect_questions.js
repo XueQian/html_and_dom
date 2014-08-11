@@ -18,6 +18,7 @@ MultiSelectQuestions.prototype.calculateScore = function() {
   });
 
   if(trueValue === this.answer){
+    console.log(this.scoreUnit+".............MultiSelectQuestions");
     return this.scoreUnit;
   }
 

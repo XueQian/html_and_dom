@@ -15,6 +15,6 @@ GapFillingQuestions.prototype.calculateScore = function() {
         score += gapFillingScore[index];
       }
   });
-
+  console.log(score+".............GapFillingQuestions");
   return score;
 };

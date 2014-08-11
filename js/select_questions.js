@@ -10,6 +10,7 @@ SelectQuestions.prototype.calculateScore = function() {
   var select = document.getElementsByName(this.questionName);
 
   if(select[0].value === this.answer){
+    console.log(this.scoreUnit+".............SelectQuestions");
     return this.scoreUnit;
   }
 

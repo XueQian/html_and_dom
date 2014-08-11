@@ -6,7 +6,7 @@ function basicInfoChecker() {
 
   var score = 0;
   score = calculateTotalScore();
-
+  console.log(score+ ">>>>>>>>>>>>>");
   scores.value = score + '分';
 
   if(basicInfo(classes, studentNumber, name)){
@@ -38,14 +38,13 @@ function basicInfo(classes, studentNumber, name) {
 }
 
 function calculateTotalScore() {
-  var questions = loadQuestions();
+var questions = loadQuestions();
 
   var score = 0;
-  for (var i = 0; i<questions.length; i++){
-
+  _.forEach(questions, function(question) {
     score += question.calculateScore();
-  }
+
+  });
 
   return score;
-
 }
