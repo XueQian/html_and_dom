@@ -9,7 +9,8 @@ function basicInfoChecker() {
   var score = 0;
   score = calculateTotalScore();
   score_div.style.color='red';
-  score.value = score + '分';
+  console.log(score);
+  scores.innerHTML = score + '分';
 
   if(basicInfo(classes, studentNumber, name)){
 
