@@ -6,7 +6,9 @@ GapFillingQuestions.prototype = Object.create(Question.prototype);
 GapFillingQuestions.prototype.constructor = GapFillingQuestions;
 
 GapFillingQuestions.prototype.calculateScore = function () {
-    var blanks = document.getElementsByName(this.questionName);
+
+    var blanks = $("input[name|="+this.questionName+"]");
+    console.log(blanks);
 
     var score = 0;
     var gapFillingScore = this.scoreUnit;

@@ -7,7 +7,7 @@ JudgeQuestions.prototype.constructor = JudgeQuestions;
 
 JudgeQuestions.prototype.calculateScore = function () {
 
-    var judge = document.getElementsByName(this.questionName);
+    var judge = $("input[name|="+this.questionName+"]");
 
     var myanswer = '';
     for (var i = 0; i < 2; i++) {

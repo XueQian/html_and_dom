@@ -7,7 +7,7 @@ MultiSelectQuestions.prototype.constructor = MultiSelectQuestions;
 
 MultiSelectQuestions.prototype.calculateScore = function () {
 
-    var selects = document.getElementsByName(this.questionName);
+    var selects = $("input[name|="+this.questionName+"]");
 
     var trueValue = '';
 

@@ -7,7 +7,8 @@ SelectQuestions.prototype.constructor = SelectQuestions;
 
 SelectQuestions.prototype.calculateScore = function () {
 
-    var select = document.getElementsByName(this.questionName);
+   // var select = document.getElementsByName(this.questionName);
+    var select = $("input[name|="+this.questionName+"]");
 
     var myanswer = '';
     for (var i = 0; i < 4; i++) {

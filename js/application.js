@@ -7,7 +7,6 @@ $(document).ready(function () {
 
     $('#btn').on('click', function () {
 
-
         if ($("#classes").val() === '' || $("#studentNumber").val() === '' || $("#name").val() === '') {
             $('#myModal').modal({keyboard: false});
             $('#classesdiv').addClass('has-error');

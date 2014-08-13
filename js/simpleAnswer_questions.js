@@ -7,9 +7,10 @@ SimpleAnswerQuestions.prototype.constructor = SimpleAnswerQuestions;
 
 SimpleAnswerQuestions.prototype.calculateScore = function () {
 
-    var simpleAnswer = document.getElementsByName(this.questionName);
+   // var simpleAnswer = document.getElementsByName(this.questionName);
+    var simpleAnswer = $("input[name|="+this.questionName+"]");
 
-    if (simpleAnswer[0].value === this.answer) {
+    if (simpleAnswer.value === this.answer) {
 
         return this.scoreUnit;
     }
