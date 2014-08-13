@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head lang="zh-CN">
-    <meta charset="UTF-8" >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>homework</title>
-
-    <link rel="stylesheet" href="lib/bootstrap-3.2.0-dist/css/bootstrap.css"/>
 
     <script type="text/javascript" src="lib/lodash-2.4.1/lodash.js"></script>
     <script type="text/javascript" src="lib/lodash-2.4.1/lodash.compat.js"></script>
     <script type="text/javascript" src="lib/jquery-2.1.1/jquery-2.1.1.js"></script>
+    <script src="lib/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
 
+    <link rel="stylesheet" href="lib/bootstrap-3.2.0-dist/css/bootstrap.min.css"/>
+
+    <script type="text/javascript" src="js/application.js"></script>
     <script type="text/javascript" src="js/questions_checker.js"></script>
     <script type="text/javascript" src="js/basicInfo_checker.js"></script>
     <script type="text/javascript" src="js/gapFilling_questions.js"></script>
@@ -21,336 +24,337 @@
 
 </head>
 <body>
-<form name="full"  action="#" method="post" autocomplete="off">
-    <div class="container">
-    <header>
-        <h1 class="text-center">统一建模语言理论测试</h1>
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <label class="control-label">
-                                考试科目：&nbsp;
-                            </lavel>
-                                统一建模语言UML&nbsp;
-                        </div>
-                        <div class="col-md-4">
-                            <label class="control-label">
-                                时间：&nbsp;&nbsp;&nbsp;
-                            </lavel>
-                                100&nbsp;分钟&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        </div>
-                        <div id="scorediv" class="col-md-4">
-                            <label class="control-label">
-                                得分:
-                            </label>
-                            <span id="score" class="text-danger"></span>
-                        </div>
-                    </div>
+
+
+<div class="container">
+<form name="full" action="#" method="post" autocomplete="off">
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">提示：</h4>
+                </div>
+                <div class="modal-body">
+                   请填入必填项!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                 </div>
             </div>
-
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <div class="col-md-4">
-                        <div id="classesdiv" class="form-group">班级(必填):
-                            <div><input class="form-control" type="text" id="classes"></div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div id="studentNumberdiv" class="form-group">学号(必填):
-                            <div><input class="form-control" type="text" id="studentNumber"></div>
-                            </div>
-                        </div>
-                    <div class="col-md-4">
-                        <div id="namediv" class="form-group">姓名(必填):
-                            <div><input class="form-control" type="text" id="name"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- <div class="panel panel-default">
-                <div class="panel-body">
-                    <div class="row form-inline">
-                        <div id="classes_formGroup" class="col-md-4 form-group">
-                            <label class="control-label">
-                                班级（必填）：
-                                <input id="classes" type="text" required placeholder="请输入班级" name="classes">
-                            </label>
-                        </div>
-                        <div id="studentNumber_formGroup" class="col-md-4 form-group">
-                            <label class="control-label">
-                                学号（必填）：
-                                <input id="studentNumber" type="text" required placeholder="请输入学号" name="studentNumber">
-                            </label>
-                        </div>
-                        <div id="name_formGroup" class="col-md-4 form-group">
-                            <label class="control-label">
-                                学号（必填）：
-                                <input id="name" type="text" placeholder="请输入姓名" required name="name">
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-    </header>
-
-    <section>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4>一、填空题（每空5分，共20分）</h4>
-            </div>
-            <div class="panel-body">
-                <ol>
-                    <li>
-                        <div class="form-group">
-                            <label for="gapFilling1" class="control-label">
-                                UML的中文全称是：
-                            </label>
-                            <div class="form-inline">
-                                <input type="text" id="gapFilling1" name="gapFilling1" class="form-control">
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="form-group">
-                            <label for="gapFilling2" class="control-label">
-                                对象最突出的特征是:
-                            </label>
-                            <div class="form-inline">
-                                <input type="text" id="gapFilling2" name="gapFilling2" class="form-control">
-                                <input type="text" id="gapFilling2_1" name="gapFilling2" class="form-control">
-                                <input type="text" id="gapFilling2_2" name="gapFilling2" class="form-control">
-                            </div>
-                        </div>
-                    </li>
-                </ol>
-            </div>
         </div>
-    </section>
-
-    <section>
-          <div class="panel panel-default">
-              <div class="panel-heading">
-                  <h4>二、选择题（每题10分，共20分）</h4>
-              </div>
-              <div class="panel-body">
-                  <ol>
-                      <li>
-                          <div class="form-group">
-                              <label class="control-label">
-                                  UML与软件工程的关系是：
-                              </label>
-                              <div class="radio">
-                                  <label>
-                                      <input type="radio" id="select1" name="select1" value="A">
-                                      （A）UML就是软件工程
-                                  </label>
-                              </div>
-                              <div class="radio">
-                                  <label>
-                                      <input type="radio" id="select1_1" name="select1" value="B">
-                                      （B）UML参与到软件工程中软件开发过程的几个阶段
-                                  </label>
-                              </div>
-                              <div class="radio">
-                                  <label>
-                                      <input type="radio" id="select1_2" name="select1" value="C">
-                                      （C）UML与软件工程无关
-                                  </label>
-                              </div>
-                              <div class="radio">
-                                  <label>
-                                      <input type="radio" id="select1_3" name="select1" value="D">
-                                      （D）UML是软件工程的一部分
-                                  </label>
-                              </div>
-                          </div>
-                      </li>
-
-                      <li>
-                          <div class="form-group">
-                              <label class="control-label">
-                                  Java语言支持：
-                              </label>
-                              <div class="radio">
-                                  <label>
-                                      <input type="radio" id="select2" name="select2" value="A">
-                                      （A）单继承
-                                  </label>
-                              </div>
-                              <div class="radio">
-                                  <label>
-                                      <input type="radio" id="select2_1" name="select2" value="B">
-                                      （B）多继承
-                                  </label>
-                              </div>
-                              <div class="radio">
-                                  <label>
-                                      <input type="radio" id="select2_2" name="select2" value="C">
-                                      （C）单继承和多继承都支持
-                                  </label>
-                              </div>
-                              <div class="radio">
-                                  <label>
-                                      <input type="radio" id="select2_3" name="select2" value="D">
-                                      （D）单继承和多继承都不支持
-                                  </label>
-                              </div>
-                          </div>
-                      </li>
-                  </ol>
-              </div>
-          </div>
-    </session>
-
-    <session>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4>三、多项选择题（每题10分，共20分）</h4>
-            </div>
-            <div class="panel-body">
-                <ol>
-                    <li>
-                        <div class="form-group">
-                            <label class="control-label">
-                                用例的粒度分为以下哪三种：
-                            </label>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" id="multiSelect1" name="multiSelect1" value="A">
-                                    （A）概述级
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" id="multiSelect1_1" name="multiSelect1" value="B">
-                                    （B）需求级
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" id="multiSelect1_2" name="multiSelect1" value="C">
-                                    （C）用户目标级
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" id="multiSelect1_3" name="multiSelect1" value="D">
-                                    （D）子功能级
-                                </label>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="form-group">
-                            <label class="control-label">
-                                类图由以下哪三部分组成:
-                            </label>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" id="multiSelect2" name="multiSelect2" value="A">
-                                    （A）名称(Name)
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" id="multiSelect2_1" name="multiSelect2" value="B">
-                                    （B）属性(Attribute)
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" id="multiSelect2_2" name="multiSelect2" value="C">
-                                    （C）操作(Operation)
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" id="multiSelect2_3" name="multiSelect2" value="D">
-                                    （D）方法（Function）
-                                </label>
-                            </div>
-                        </div>
-                    </li>
-                </ol>
-            </div>
-        </div>
-    </session>
-
-    <session>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4>四、判断题（每题10分，共20分）</h4>
-            </div>
-            <div class="panel-body">
-                <ol>
-                    <li>
-                        <div class="form-group">
-                            <label class="control-label">
-                                用例图只是用于和客户交流和沟通的,用于确定需求。
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" id="judge1" name="judge1" value="V">
-                                <span class="glyphicon glyphicon-ok text-success"></span>
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" id="judge1_1" name="judge1" value="X">
-                                <span class="glyphicon glyphicon-remove text-danger"></span>
-                            </label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="form-group">
-                            <label class="control-label">
-                                在状态图中,终止状态在一个状态图中允许有任意多个。
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" id="judge2" name="judge2" value="V">
-                                <span class="glyphicon glyphicon-ok text-success"></span>
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" id="judge2_1" name="judge2" value="X">
-                                <span class="glyphicon glyphicon-remove text-danger"></span>
-                            </label>
-                        </div>
-                    </li>
-                </ol>
-            </div>
-        </div>
-    </session>
-
-    <session>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4>五、简答题（每题20分，共20分）</h4>
-            </div>
-            <div class="panel-body">
-                <ol>
-                    <li>
-                        <div class="form-group">
-                            <label for="simpleAnswer" class="control-label">
-                                简述什么是模型以及模型的表现形式:
-                            </label>
-                            <textarea id="simpleAnswer" name="simpleAnswer" class="form-control"
-                                      rows="10"></textarea>
-                        </div>
-                    </li>
-                </ol>
-            </div>
-        </div>
-    </session>
-
-    <footer>
-          <div class="row">
-            <div class="text-center">
-                <input type="submit" form="full" class="btn btn-primary" value="提交" onclick="return basicInfoChecker();">
-            </div>
-        </div>
-    </footer>
     </div>
+<header>
+    <h1 class="text-center">统一建模语言理论测试</h1>
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <label class="control-label">
+                        考试科目：&nbsp;
+                    </label>
+                    统一建模语言UML&nbsp;
+                </div>
+                <div class="col-md-4">
+                    <label class="control-label">
+                        时间：&nbsp;&nbsp;&nbsp;
+                    </label>
+                    100&nbsp;分钟&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+                <div id="scorediv" class="col-md-4">
+                    <label class="control-label" class="text-danger">
+                        得分:
+                    </label>
+                    <span id="scores" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="col-md-4">
+                <div id="classesdiv" class="form-group">班级(必填):
+                    <div><input class="form-control" type="text" id="classes"></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div id="studentNumberdiv" class="form-group">学号(必填):
+                    <div><input class="form-control" type="text" id="studentNumber"></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div id="namediv" class="form-group">姓名(必填):
+                    <div><input class="form-control" type="text" id="name"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>一、填空题（每空5分，共20分）</h4>
+        </div>
+        <div class="panel-body">
+            <ol>
+                <li>
+                    <div class="form-group">
+                        <label for="gapFilling1" class="control-label">
+                            UML的中文全称是：
+                        </label>
+
+                        <div class="form-inline">
+                            <input type="text" id="gapFilling1" name="gapFilling1" class="form-control">
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="form-group">
+                        <label for="gapFilling2" class="control-label">
+                            对象最突出的特征是:
+                        </label>
+
+                        <div class="form-inline">
+                            <input type="text" id="gapFilling2" name="gapFilling2" class="form-control">
+                            <input type="text" id="gapFilling2_1" name="gapFilling2" class="form-control">
+                            <input type="text" id="gapFilling2_2" name="gapFilling2" class="form-control">
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>二、选择题（每题10分，共20分）</h4>
+        </div>
+        <div class="panel-body">
+            <ol>
+                <li>
+                    <div class="form-group">
+                        <label class="control-label">
+                            UML与软件工程的关系是：
+                        </label>
+
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="select1" name="select1" value="A">
+                                （A）UML就是软件工程
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="select1_1" name="select1" value="B">
+                                （B）UML参与到软件工程中软件开发过程的几个阶段
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="select1_2" name="select1" value="C">
+                                （C）UML与软件工程无关
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="select1_3" name="select1" value="D">
+                                （D）UML是软件工程的一部分
+                            </label>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="form-group">
+                        <label class="control-label">
+                            Java语言支持：
+                        </label>
+
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="select2" name="select2" value="A">
+                                （A）单继承
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="select2_1" name="select2" value="B">
+                                （B）多继承
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="select2_2" name="select2" value="C">
+                                （C）单继承和多继承都支持
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="select2_3" name="select2" value="D">
+                                （D）单继承和多继承都不支持
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>三、多项选择题（每题10分，共20分）</h4>
+        </div>
+        <div class="panel-body">
+            <ol>
+                <li>
+                    <div class="form-group">
+                        <label class="control-label">
+                            用例的粒度分为以下哪三种：
+                        </label>
+
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="multiSelect1" name="multiSelect1" value="A">
+                                （A）概述级
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="multiSelect1_1" name="multiSelect1" value="B">
+                                （B）需求级
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="multiSelect1_2" name="multiSelect1" value="C">
+                                （C）用户目标级
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="multiSelect1_3" name="multiSelect1" value="D">
+                                （D）子功能级
+                            </label>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="form-group">
+                        <label class="control-label">
+                            类图由以下哪三部分组成:
+                        </label>
+
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="multiSelect2" name="multiSelect2" value="A">
+                                （A）名称(Name)
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="multiSelect2_1" name="multiSelect2" value="B">
+                                （B）属性(Attribute)
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="multiSelect2_2" name="multiSelect2" value="C">
+                                （C）操作(Operation)
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="multiSelect2_3" name="multiSelect2" value="D">
+                                （D）方法（Function）
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>四、判断题（每题10分，共20分）</h4>
+        </div>
+        <div class="panel-body">
+            <ol>
+                <li>
+                    <div class="form-group">
+                        <label class="control-label">
+                            用例图只是用于和客户交流和沟通的,用于确定需求。
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" id="judge1" name="judge1" value="V">
+                            <span class="glyphicon glyphicon-ok text-success"></span>
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" id="judge1_1" name="judge1" value="X">
+                            <span class="glyphicon glyphicon-remove text-danger"></span>
+                        </label>
+                    </div>
+                </li>
+                <li>
+                    <div class="form-group">
+                        <label class="control-label">
+                            在状态图中,终止状态在一个状态图中允许有任意多个。
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" id="judge2" name="judge2" value="V">
+                            <span class="glyphicon glyphicon-ok text-success"></span>
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" id="judge2_1" name="judge2" value="X">
+                            <span class="glyphicon glyphicon-remove text-danger"></span>
+                        </label>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>五、简答题（每题20分，共20分）</h4>
+        </div>
+        <div class="panel-body">
+            <ol>
+                <li>
+                    <div class="form-group">
+                        <label for="simpleAnswer" class="control-label">
+                            简述什么是模型以及模型的表现形式:
+                        </label>
+                        <textarea id="simpleAnswer" name="simpleAnswer" class="form-control"
+                                  rows="10"></textarea>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="row">
+        <div class="text-center">
+            <input type="submit" form="full" id="btn" class="btn btn-primary btn-lg" value="提交">
+        </div>
+    </div>
+</footer>
+</div>
 </form>
 </body>
 </html>
