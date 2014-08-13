@@ -7,6 +7,7 @@ $(document).ready(function () {
 
     $('#btn').on('click', function () {
 
+
         if ($("#classes").val() === '' || $("#studentNumber").val() === '' || $("#name").val() === '') {
             $('#myModal').modal({keyboard: false});
             $('#classesdiv').addClass('has-error');
@@ -19,7 +20,9 @@ $(document).ready(function () {
         }
         var score = 0;
         score = calculateTotalScore();
+
         if (score !== 0) {
+            $('#scorediv').addClass('text-danger');
             scores.innerHTML = score + '分';
         }
         return false;
